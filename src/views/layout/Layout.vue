@@ -9,7 +9,7 @@
 
           <el-dropdown class="avatar-container right-menu-item" trigger="click">
             <div class="avatar-wrapper">
-              <img class="user-avatar" src="/static/img/1.jpg">
+              <img class="user-avatar" :src="avatarImg">
               <i class="el-icon-caret-bottom"></i>
             </div>
             <el-dropdown-menu slot="dropdown">
@@ -42,6 +42,11 @@ import ThemePicker from '@/components/ThemePicker'
 
 export default {
   name: 'layout',
+  data () {
+    return {
+      avatarImg:'/static/img/4.jpg'
+    }
+  },
   components: {
     Navbar,
     Sidebar,

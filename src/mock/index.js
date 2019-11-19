@@ -3,6 +3,7 @@ import loginAPI from './login'
 import articleAPI from './article'
 import remoteSearchAPI from './remoteSearch'
 import transactionAPI from './transaction'
+import productAPI from './Production'
 
 // Mock.setup({
 //   timeout: '350-600'
@@ -20,10 +21,18 @@ Mock.mock(/\/article\/pv/, 'get', articleAPI.getPv)
 Mock.mock(/\/article\/create/, 'post', articleAPI.createArticle)
 Mock.mock(/\/article\/update/, 'post', articleAPI.updateArticle)
 
+//产品管理相关
+Mock.mock(/\/pro\/list/, 'get', productAPI.getList)
+Mock.mock(/\/pro\/detail/, 'get', productAPI.getArticle)
+Mock.mock(/\/pro\/pv/, 'get', productAPI.getPv)
+Mock.mock(/\/pro\/create/, 'post', productAPI.createArticle)
+Mock.mock(/\/pro\/update/, 'post', productAPI.updateArticle)
+
 // 搜索相关
 Mock.mock(/\/search\/user/, 'get', remoteSearchAPI.searchUser)
 
 // 账单相关
 Mock.mock(/\/transaction\/list/, 'get', transactionAPI.getList)
+Mock.mock(/\/transaction\/update/, 'post', transactionAPI.updateArticle)
 
 export default Mock

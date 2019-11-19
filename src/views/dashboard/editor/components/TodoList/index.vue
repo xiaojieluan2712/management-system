@@ -38,14 +38,12 @@ const filters = {
   completed: todos => todos.filter(todo => todo.done)
 }
 const defalutList = [
-  { text: 'admin star this repository', done: false },
-  { text: 'admin fork this repository', done: false },
-  { text: 'admin add an order', done: false },
-  { text: 'admin order statistics', done: true },
-  { text: 'admin add a production', done: true },
-  { text: 'admin change a theme', done: true },
-  { text: 'admin change a language', done: true },
-  { text: 'admin delete a production', done: true }
+  { text: 'editor add an order', done: false },
+  { text: 'editor order statistics', done: true },
+  { text: 'editor add a production', done: true },
+  { text: 'editor change a theme', done: true },
+  { text: 'editor change a language', done: true },
+  { text: 'editor delete a production', done: true }
 ]
 export default {
   components: { Todo },

@@ -7,33 +7,29 @@ const count = 30
 for (let i = 0; i < count; i++) {
   List.push(Mock.mock({
     id: '@increment',
-    timestamp:+Mock.Random.date('T'),
-    author: '@first',
-    reviewer: '@first',
-    title: '@title(5, 10)',
-    forecast: '@float(0, 100, 2, 2)',
-    'importance|1': ['admin', 'editor'],
-    'type|1': ['CN', 'US', 'JP', 'EU'],
-    'status|1': ['published', 'draft', 'deleted'],
-    display_time: '@datetime',
-    pageviews: '@integer(300, 5000)'
+    timestamp:Mock.Random.date('T'),
+    'kind|1': ['考试', '电子书', '教辅', '小说','文学', '艺术' ,'计算机'],
+    goodsName: /[a-z]{2}[A-Z]{2}[0-9]/,
+    sales:'@integer(40,400)',
+    //sales:'@integer(1,5)',
+    originPrice:'@integer(10,200)',
+    price:'@integer(20,600)',
+    'status|1': ['published', 'draft', 'deleted']
   }))
 }
 
 export default {
   getList: config => {
-    const { importance, type, title, page = 1, limit = 20, sort } = param2Obj(config.url)
+    const { kind, goodsName,sales,price, page = 1, limit = 20, } = param2Obj(config.url)
 
     let mockList = List.filter(item => {
-      if (importance && item.importance !== importance) return false
-      if (type && item.type !== type) return false
-      if (title && item.author.indexOf(title) < 0) return false
+      if (kind && item.kind !== kind) return false
+      if (goodsName && item.goodsName !== goodsName) return false
+      if (item.sales < sales-100 || item.sales > sales) return false
+      if (item.price < price-100 || item.price > price) return false
       //if(title !== item.title) return false
       return true
     })
-    if (sort === '-id') {
-      mockList = mockList.reverse()
-    }
 
     const pageList = mockList.filter((item, index) => index < limit * page && index >= limit * (page - 1))
 

@@ -10,7 +10,7 @@ import { mapGetters } from 'vuex'
 import complexTable from './complexTable'
 
 export default{
-  name: 'permission',
+  name: 'ProManage',
   components:{
     complexTable
   },

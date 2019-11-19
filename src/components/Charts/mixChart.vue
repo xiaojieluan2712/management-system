@@ -44,10 +44,10 @@ export default {
     initChart() {
       this.chart = echarts.init(document.getElementById(this.id))
       const xData = (function() {
-        const data = []
-        for (let i = 1; i < 13; i++) {
-          data.push(i + 'month')
-        }
+        const data = ['考试', '电子书', '教辅', '小说','文学', '艺术' ,'计算机']
+        // for (let i = 1; i < 13; i++) {
+        //   data.push(i + 'month')
+        // }
         return data
       }())
       this.chart.setOption({
@@ -87,7 +87,7 @@ export default {
           textStyle: {
             color: '#90979c'
           },
-          data: ['female', 'male', 'average']
+          data: ['originPrice', 'price', 'sales']
         },
         calculable: true,
         xAxis: [{

@@ -47,7 +47,7 @@ export default {
         backgroundColor: '#394056',
         title: {
           top: 20,
-          text: 'Requests',
+          text: 'Orders statistics',
           textStyle: {
             fontWeight: 'normal',
             fontSize: 16,
@@ -69,7 +69,7 @@ export default {
           itemWidth: 14,
           itemHeight: 5,
           itemGap: 13,
-          data: ['CMCC', 'CTCC', 'CUCC'],
+          data: ['七月', '八月', '九月'],
           right: '4%',
           textStyle: {
             fontSize: 12,
@@ -91,11 +91,11 @@ export default {
               color: '#57617B'
             }
           },
-          data: ['13:00', '13:05', '13:10', '13:15', '13:20', '13:25', '13:30', '13:35', '13:40', '13:45', '13:50', '13:55']
+          data: ['1~5', '6~10', '11~15', '16~20', '21~25', '26~30']
         }],
         yAxis: [{
           type: 'value',
-          name: '(%)',
+          name: '(单)',
           axisTick: {
             show: false
           },
@@ -117,7 +117,7 @@ export default {
           }
         }],
         series: [{
-          name: 'CMCC',
+          name: '七月',
           type: 'line',
           smooth: true,
           symbol: 'circle',
@@ -151,7 +151,7 @@ export default {
           },
           data: [220, 182, 191, 134, 150, 120, 110, 125, 145, 122, 165, 122]
         }, {
-          name: 'CTCC',
+          name: '八月',
           type: 'line',
           smooth: true,
           symbol: 'circle',
@@ -185,7 +185,7 @@ export default {
           },
           data: [120, 110, 125, 145, 122, 165, 122, 220, 182, 191, 134, 150]
         }, {
-          name: 'CUCC',
+          name: '九月',
           type: 'line',
           smooth: true,
           symbol: 'circle',

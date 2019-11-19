@@ -76,8 +76,8 @@ export const asyncRouterMap = [
       icon: 'component'
     },
     children: [
-      { path: 'pro-manage', component: _import('example/table/dragTable'), name: 'dragTable', meta: { title: 'proManage' }},
-      { path: 'pro-statistics', component: _import('charts/keyboard'), name: 'keyboardChart', meta: { title: 'proStatistics', noCache: true }},
+      { path: 'pro-manage', component: _import('Production/ProManage/complexTable'), name: 'complexTable', meta: { title: 'proManage' }},
+      { path: 'pro-statistics', component: _import('Production/ProStatistics/mixChart'), name: 'mixChart', meta: { title: 'proStatistics', noCache: true }},
      // { path: 'back-to-top', component: _import('components-demo/backToTop'), name: 'backToTop-demo', meta: { title: 'backToTop' }}
     ]
   },
@@ -91,9 +91,9 @@ export const asyncRouterMap = [
       icon: 'chart'
     },
     children: [
-      { path: 'order-manage', component: _import('example/table/TransactionTable'), name: 'transactionTable', meta: { title: 'orderManage' }},
+      { path: 'order-manage', component: _import('Order/OrderManage/TransactionTable'), name: 'transactionTable', meta: { title: 'orderManage' }},
       //{ path: 'statistics-line', component: _import('charts/line'), name: 'lineChart', meta: { title: 'statisticsLine', noCache: true }},
-      { path: 'order-statistics', component: _import('charts/mixChart'), name: 'mixChart', meta: { title: 'orderStatistics', noCache: true }}
+      { path: 'order-statistics', component: _import('Order/OrderStatistics/line'), name: 'line', meta: { title: 'orderStatistics', noCache: true }}
     ]
   },
   /*
